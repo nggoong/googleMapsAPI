@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>google_maps</title>
+    <style>
+        #map {
+            height:400px;
+            width:100%;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>my google_maps</h1>
+    <div id="map"></div>    
+
+
+    <script>
+        function initMap() {
+            var options = {
+                zoom:15,
+                center:{lat:35.152051, lng:129.119035}
+            }
+            var map = new google.maps.Map(document.querySelector('#map'), options);
+
+            var marker = new google.maps.Marker({
+                position:{lat:35.152051, lng:129.119035},
+                map:map
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyzCjbaTe_uX0cXwjpHmRikUX6zQWNHk4&callback=initMap"
+    type="text/javascript"></script>
 </body>
 </html>
+
